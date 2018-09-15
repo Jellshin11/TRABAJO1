@@ -1,0 +1,48 @@
+<!--
+Instrucciones
+* La página muestra una lista desplegable con nombre de países y un recuadro sin imagen por omisión
+* Una vez que el usuario seleccione una opción de la lista, deberá mostrarse la imagen de la bandera del país en el recuadro
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio #1: Mostrar imagen</title>
+  <style>
+      * {
+          font-family: Georgia, serif;
+      }
+      div{
+        margin: 10px auto;
+        width: 400px;
+      }
+      img{
+        border: 1px solid black;
+      }
+  </style>
+</head>
+<body>
+  <form name="change_flag" id="change_flag">
+    <select name="country" id="country" onchange="cargar(this.value)">
+      <option value="no_image.png">Seleccione</option>
+      <option value="flag_GT.png">Guatemala</option>
+      <option value="flag_SV.png">El Salvador</option>
+      <option value="flag_HN.png">Honduras</option>
+      <option value="flag_NI.png">Nicaragua</option>
+      <option value="flag_CR.png">Costa Rica</option>
+    </select>
+  </form>
+  <div>
+    <img src="images/no_image.png" id="imagen" alt="Imagen no seleccionada"/>
+  </div>
+<script>
+    function cargar(mane) {
+    var img = document.getElementById("imagen");
+    var img_carpeta = "images/";
+    if (img) {
+    img.src = img_carpeta + mane;
+    }
+    }
+</script>
+</body>
+</html>
